@@ -13,20 +13,20 @@ StudioHunter adalah aplikasi pengeditan video berbasis web yang dibangun menggun
 
 ## 🛠️ Struktur Proyek
 
-hunter/
-├── app/
-│   ├── main.py                 # Endpoint API & Routing FastAPI
-│   ├── templates/              # File HTML (UI)
-│   ├── static/                 
-│   │   ├── css/                # Styling (style.css)
-│   │   ├── js/                 # Logika Frontend (editor.js)
-│   │   ├── uploads/            # Penyimpanan video mentah
-│   │   └── exports/            # Hasil render video (.mp4)
-│   └── services/               
-│       ├── video_editor.py     # Mesin MoviePy 2.2.1
-│       └── ai_tools.py         # Integrasi Whisper AI
-├── requirements.txt            # Daftar library Python
-└── README.md                   # Panduan instalasi
+    hunter/
+    ├── app/
+    │   ├── main.py                 # Endpoint API & Routing FastAPI
+    │   ├── templates/              # File HTML (UI)
+    │   ├── static/                 
+    │   │   ├── css/                # Styling (style.css)
+    │   │   ├── js/                 # Logika Frontend (editor.js)
+    │   │   ├── uploads/            # Penyimpanan video mentah
+    │   │   └── exports/            # Hasil render video (.mp4)
+    │   └── services/               
+    │       ├── video_editor.py     # Mesin MoviePy 2.2.1
+    │       └── ai_tools.py         # Integrasi Whisper AI
+    ├── requirements.txt            # Daftar library Python
+    └── README.md                   # Panduan instalasi
 
 
 📦 Instalasi
