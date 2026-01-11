@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudioHunter Pro | AI Video Editor</title>
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        
+        <aside class="sidebar">
+            <div class="logo">StudioHunter <span>Pro</span></div>
+            
+            <div class="control-group">
+                <h3>1. Media Source</h3>
+                <input type="file" id="video-upload" hidden accept="video/*">
+                <button onclick="document.getElementById('video-upload').click()" class="btn-primary">
+                    📂 Upload HDD
+                </button>
+                <div class="input-row" style="margin-top:10px;">
+                    <input type="text" id="link-input" placeholder="Link YouTube/TikTok...">
+                    <button class="btn-outline" style="width: 70px;">Import</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>2. Visual Overlays</h3>
+                <div class="input-row">
+                    <button class="btn-outline" onclick="triggerImageUpload()">+ Image</button>
+                    <button class="btn-outline" onclick="triggerStickerAdd()">+ Sticker</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>3. Text Layer</h3>
+                <textarea id="text-input" placeholder="Ketik teks di sini..."></textarea>
+                <div class="input-row">
+                    <input type="number" id="font-size" value="40" title="Font Size" style="width: 60px;">
+                    <div class="color-pickers" style="display: flex; gap: 5px;">
+                        <input type="color" id="text-color" value="#ffffff" title="Warna Teks">
+                        <input type="color" id="bg-color" value="#000000" title="Latar Teks">
+                    </div>
+                </div>
+                <button onclick="addText()" class="btn-action">Add Text</button>
+            </div>
+
+            <div class="control-group">
+                <h3>4. Audio & Volume</h3>
+                <select id="bg-music" style="width: 100%; margin-bottom: 10px; background: #1f2937; color: white; border: 1px solid #334155; padding: 5px; border-radius: 4px;">
+                    <option value="">None (Original Only)</option>
+                    <option value="upbeat">Upbeat Energy</option>
+                    <option value="lofi">Lofi Chill</option>
+                </select>
+                
+                <div class="volume-control">
+                    <div class="vol-header">
+                        <label>Video Volume</label>
+                        <span id="v-val">100%</span>
+                    </div>
+                    <input type="range" id="video-volume" min="0" max="100" value="100">
+                    <div class="check-row" style="margin-top: 5px; font-size: 12px; display: flex; align-items: center; gap: 5px;">
+                        <input type="checkbox" id="mute-checkbox"> <span>Mute Video</span>
+                    </div>
+                </div>
+
+                <div class="volume-control" style="margin-top: 10px;">
+                    <div class="vol-header">
+                        <label>Music Volume</label>
+                        <span id="m-val">30%</span>
+                    </div>
+                    <input type="range" id="music-volume" min="0" max="100" value="30">
+                </div>
+            </div>
+
+            <button id="render-btn" onclick="renderVideo()" class="btn-render">
+                RENDER MP4
+            </button>
+        </aside>
+
+        <main class="preview-area">
+            <div class="top-bar">
+                <button class="btn-top-secondary">AI Subtitle</button>
+                <button class="btn-top-primary" onclick="renderVideo()">RENDER MP4</button>
+            </div>
+
+            <div id="video-viewport">
+                <video id="main-preview" src="" controls></video>
+                
+                <div id="preview-overlay"></div>
+            </div>
+            
+            <div class="timeline-layers">
+                <div class="timeline-header">
+                    <span>Timeline Layers</span>
+                </div>
+                <div id="layer-list" class="layer-list">
+                    <p class="empty-msg">Belum ada layer ditambahkan</p>
+                </div>
+                <div class="timeline-footer">
+                    <span>DURATION</span>
+                    <span id="video-duration">00:00</span>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="/static/js/editor.js"></script>
+</body>
+</html>
