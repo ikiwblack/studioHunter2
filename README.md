@@ -56,7 +56,7 @@ StudioHunter adalah aplikasi pengeditan video berbasis web yang dibangun menggun
 3. Konfigurasi Path
   Buka app/services/video_editor.py dan sesuaikan path ImageMagick Anda:
 
-  os.environ["IMAGEMAGICK_BINARY"] = r"%PATH%\Program Files\ImageMagick-7.1.2-Q16-HDRI\magick.exe"
+          os.environ["IMAGEMAGICK_BINARY"] = r"%PATH%\Program Files\ImageMagick-7.1.2-Q16-HDRI\magick.exe"
 
 
 🏃 Cara Menjalankan
@@ -64,7 +64,7 @@ StudioHunter adalah aplikasi pengeditan video berbasis web yang dibangun menggun
 
     python -m uvicorn app.main:app --reload
 
-Buka browser dan akses: http://127.0.0.1:8000
+# Buka browser dan akses: http://127.0.0.1:8000
 
 📝 Catatan Penting
 - Rendering: Proses render menggunakan CPU. Kecepatan bergantung pada durasi video dan jumlah layer teks.
